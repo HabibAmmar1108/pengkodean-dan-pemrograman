@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Persediaan Penjualan - HnZ Automotive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #000000; /* Hitam */
+            color: #ffffff; /* Putih */
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 28px;
+            color: #ff0000; /* Merah */
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #ffffff; /* Putih */
+            color: #000000; /* Hitam */
+            margin: 0 5px;
+            border-radius: 5px 5px 0 0;
+        }
+        .tab-button.active {
+            background-color: #ff0000; /* Merah */
+            color: #ffffff; /* Putih */
+        }
+        .tab-content {
+            display: none;
+            background-color: #1a1a1a; /* Abu-abu tua */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3); /* Bayangan merah lembut */
+        }
+        .tab-content.active {
+            display: block;
+        }
+        h2 {
+            font-size: 22px;
+            color: #ff0000; /* Merah */
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ff0000; /* Merah */
+        }
+        th {
+            background-color: #ff0000; /* Merah */
+            color: #ffffff; /* Putih */
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #333333; /* Abu-abu tua */
+        }
+        tr:nth-child(odd) {
+            background-color: #1a1a1a; /* Abu-abu sangat tua */
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ff0000; /* Merah */
+            border-radius: 5px;
+            background-color: #ffffff; /* Putih */
+            color: #000000; /* Hitam */
+        }
+        .form-group button {
+            padding: 10px 20px;
+            background-color: #ff0000; /* Merah */
+            color: #ffffff; /* Putih */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>HnZ Automotive</h1>
+        <p>Aplikasi Persediaan Penjualan</p>
+    </div>
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab('update-stocks')">Update Stocks</button>
+        <button class="tab-button" onclick="openTab('inventory')">Inventory</button>
+        <button class="tab-button" onclick="openTab('sales')">Sales</button>
+    </div>
+
+    <!-- Tab Update Stocks -->
+    <div id="update-stocks" class="tab-content active">
+        <h2>Update Stocks</h2>
+        <form>
+            <div class="form-group">
+                <label for="item-name">Nama Barang</label>
+                <input type="text" id="item-name" name="item-name" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Jumlah</label>
+                <input type="number" id="quantity" name="quantity" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Update Stok</button>
+            </div>
+        </form>
+        <p>Bagian ini memungkinkan Anda untuk memperbarui stok barang yang tersedia di HnZ Automotive. Anda dapat memasukkan nama barang yang ingin diperbarui, kemudian menentukan jumlah stok yang akan ditambahkan atau dikurangi. Pastikan data yang dimasukkan akurat agar inventaris perusahaan tetap terkelola dengan baik. Setelah semua informasi diisi, tekan tombol "Update Stok" untuk menyimpan perubahan. Fitur ini sangat berguna untuk menjaga ketersediaan barang sesuai dengan kebutuhan pelanggan.</p>
+    </div>
+
+    <!-- Tab Inventory -->
+    <div id="inventory" class="tab-content">
+        <h2>Inventory</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama Barang</th>
+                    <th>Jumlah</th>
+                    <th>Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mobil A</td>
+                    <td>10</td>
+                    <td>Rp 200.000.000</td>
+                </tr>
+                <tr>
+                    <td>Mobil B</td>
+                    <td>5</td>
+                    <td>Rp 150.000.000</td>
+                </tr>
+                <tr>
+                    <td>Mobil C</td>
+                    <td>8</td>
+                    <td>Rp 180.000.000</td>
+                </tr>
+                <tr>
+                    <td>Mobil D</td>
+                    <td>12</td>
+                    <td>Rp 220.000.000</td>
+                </tr>
+                <tr>
+                    <td>Mobil E</td>
+                    <td>7</td>
+                    <td>Rp 250.000.000</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Tab ini menampilkan daftar lengkap barang yang tersedia di inventaris HnZ Automotive. Setiap entri mencakup nama barang, jumlah stok yang ada, dan harga per unit. Informasi ini penting untuk memantau ketersediaan barang dan merencanakan pembelian atau penjualan berikutnya. Pastikan untuk selalu memperbarui stok melalui tab "Update Stocks" agar data di sini tetap akurat dan mencerminkan kondisi terkini perusahaan.</p>
+    </div>
+
+    <!-- Tab Sales -->
+    <div id="sales" class="tab-content">
+        <h2>Sales</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Barang</th>
+                    <th>Jumlah</th>
+                    <th>Total Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2024-10-01</td>
+                    <td>Mobil A</td>
+                    <td>2</td>
+                    <td>Rp 400.000.000</td>
+                </tr>
+                <tr>
+                    <td>2024-10-02</td>
+                    <td>Mobil B</td>
+                    <td>1</td>
+                    <td>Rp 150.000.000</td>
+                </tr>
+                <tr>
+                    <td>2024-10-03</td>
+                    <td>Mobil C</td>
+                    <td>3</td>
+                    <td>Rp 540.000.000</td>
+                </tr>
+                <tr>
+                    <td>2024-10-04</td>
+                    <td>Mobil D</td>
+                    <td>2</td>
+                    <td>Rp 440.000.000</td>
+                </tr>
+                <tr>
+                    <td>2024-10-05</td>
+                    <td>Mobil E</td>
+                    <td>1</td>
+                    <td>Rp 250.000.000</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Tab "Sales" menampilkan riwayat penjualan yang telah dilakukan oleh HnZ Automotive. Setiap entri mencakup tanggal penjualan, nama barang yang dijual, jumlah yang terjual, dan total harga dari transaksi tersebut. Data ini sangat penting untuk menganalisis performa penjualan, melacak pendapatan, dan membuat strategi bisnis ke depan. Pastikan semua transaksi dicatat dengan benar untuk mendukung pengelolaan keuangan perusahaan yang lebih baik.</p>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            var tabContents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+            var tabButtons = document.getElementsByClassName("tab-button");
+            for (var i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>

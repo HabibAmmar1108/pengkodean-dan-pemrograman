@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIAP Undip - Dashboard</title>
+    <style>
+        /* Gaya umum */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #0b2c6e;
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar h1 {
+            font-size: 22px;
+            letter-spacing: 1px;
+        }
+
+        .navbar .user-name {
+            font-weight: bold;
+        }
+
+        /* Container utama */
+        .dashboard-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Profil */
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .profile img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 3px solid #0b2c6e;
+        }
+
+        .profile-info h3 {
+            font-size: 20px;
+            color: #0b2c6e;
+        }
+
+        .profile-info p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Status Akademik */
+        .status-akademik, .prestasi-akademik {
+            background: #f1f3f5;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .status-akademik h4, .prestasi-akademik h4 {
+            color: #0b2c6e;
+            margin-bottom: 8px;
+        }
+
+        .status-akademik p, .prestasi-akademik p {
+            font-size: 14px;
+            color: #444;
+        }
+
+        .status-akademik span {
+            font-weight: bold;
+            color: green;
+        }
+
+        /* Grid Menu */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .grid-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: #0b2c6e;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+
+        .grid-item:hover {
+            background: #0b2c6e;
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Responsif */
+        @media (max-width: 600px) {
+            .profile {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .profile img {
+                width: 70px;
+                height: 70px;
+            }
+
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>SIAP Undip</h1>
+        <div class="user-name">HABIB AMMAR ZAKIY</div>
+    </div>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        
+        <!-- Profil -->
+        <div class="profile">
+            <img src="https://via.placeholder.com/90" alt="Foto Profil">
+            <div class="profile-info">
+                <h3>HABIB AMMAR ZAKIY</h3>
+                <p>NIM: 12803123140228 | Akuntansi S1</p>
+            </div>
+        </div>
+
+        <!-- Status Akademik -->
+        <div class="status-akademik">
+            <h4>Status Akademik</h4>
+            <p>Dosen Wali: Dr. Warsito Kawedar, S.E., M.Si., Akt.</p>
+            <p>Semester: 4 | Tahun Akademik: 2024/2025 Genap</p>
+            <p>Status: <span>AKTIF</span></p>
+        </div>
+
+        <!-- Prestasi Akademik -->
+        <div class="prestasi-akademik">
+            <h4>Prestasi Akademik</h4>
+            <p>IPK: 3.46 | SKS: 59</p>
+        </div>
+
+        <!-- Menu Grid -->
+        <div class="grid-container">
+            <div class="grid-item">Her-Registrasi</div>
+            <div class="grid-item">Akademik</div>
+            <div class="grid-item">Biaya Kuliah</div>
+            <div class="grid-item">Absensi Scanner</div>
+            <div class="grid-item">Evaluasi PBM</div>
+            <div class="grid-item">SKPI</div>
+            <div class="grid-item">Kuliah Online</div>
+            <div class="grid-item">Kalender Akademik</div>
+            <div class="grid-item">Jadwal Kuliah</div>
+            <div class="grid-item">Jadwal Dosen</div>
+        </div>
+    </div>
+
+</body>
+</html>
