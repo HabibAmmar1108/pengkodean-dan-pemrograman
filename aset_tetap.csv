@@ -1,0 +1,9 @@
+aset_id,kategori,nilai_perolehan,umur_ekonomis,metode
+AST001,Mesin Produksi A,1000000000,5,garis_lurus
+AST002,Mesin Produksi B,1500000000,5,garis_lurus
+AST003,Kendaraan Operasional X,800000000,4,saldo_menurun
+AST004,Peralatan Kantor Set 1,200000000,4,garis_lurus
+AST005,Bangunan Pabrik Utama,5000000000,20,garis_lurus
+AST006,Mesin Produksi C,1200000000,8,saldo_menurun
+AST007,Kendaraan Operasional Y,600000000,4,saldo_menurun
+AST008,Peralatan IT Server,300000000,4,garis_lurus
